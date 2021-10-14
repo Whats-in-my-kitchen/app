@@ -1,0 +1,1 @@
+We will define all the entities and aggregates in this layer.

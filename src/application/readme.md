@@ -1,0 +1,1 @@
+This will be the application layer which ties the presentation and logic layer together. We will be using Redux for this.
