@@ -1,6 +1,4 @@
-<!-- npm install yarn -->
-**To get started**
-
+***To get started***
 1. Install and install Nodejs if you haven't already: https://nodejs.org/en/
 2. Install VSCode: https://code.visualstudio.com/download
 3. This is a private repo so make sure you are signed in to your github account
@@ -13,8 +11,7 @@
 
 Note: You need to have Andriod Studio installed on your system. 
 
-
-**Folder Structure** 
+***Folder Structure*** 
 This project is divided into 4 layers:
 1. Application
 2. Domain
@@ -24,5 +21,6 @@ This project is divided into 4 layers:
 Under each of these folders you will find a readme that basically explains what the layers are about. 
 
 
-**Working with Git**
+***Working with Git***
+
 Create a branch for the feature you are working on. For example: ShoppingListScreen, SettingsScreen, ListComponent, etc. Once you have tested your code and everything works fine request a PR on github. We will test the code together and merge it to main.
