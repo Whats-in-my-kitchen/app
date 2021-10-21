@@ -23,3 +23,6 @@ This project is divided into 4 layers:
 
 Under each of these folders you will find a readme that basically explains what the layers are about. 
 
+
+**Working with Git**
+Create a branch for the feature you are working on. For example: ShoppingListScreen, SettingsScreen, ListComponent, etc. Once you have tested your code and everything works fine request a PR on github. We will test the code together and merge it to main.
