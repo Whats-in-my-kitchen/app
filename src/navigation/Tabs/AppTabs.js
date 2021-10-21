@@ -18,19 +18,15 @@ export const AppTabs=()=>{
           if (route.name ==='ShoppingList'){
             iconName = focused ? <Entypo name="shopping-bag" size={24} color={kcPrimaryColor} /> :<Entypo name="shopping-bag" size={24} color={kcLightGrey} />
           }
-
           if (route.name ==='Inventory'){
             iconName = focused ? <MaterialIcons name="inventory" size={24} color={kcPrimaryColor} /> :<MaterialIcons name="inventory" size={24} color={kcLightGrey} />
           }
-
           if (route.name ==='Settings'){
             iconName = focused ?<Ionicons name="settings" size={24} color={kcPrimaryColor} /> :<Ionicons name="settings" size={24} color={kcLightGrey} />
           }
-
           return iconName
         }
       })}
-
 
        tabBarOptions={{
           activeTintColor: '#B30200',
