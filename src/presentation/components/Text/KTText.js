@@ -93,7 +93,7 @@ function KTBody({ text, color, fontWeight }) {
   );
 }
 
-function KTCaption({ text, color, fontWeight }) {
+function KTCaption({ text, color, fontWeight, onPress }) {
   return (
     <Text
       style={[
@@ -102,11 +102,13 @@ function KTCaption({ text, color, fontWeight }) {
         color ? { color: color } : null,
         fontWeight ? { fontWeight: fontWeight } : null,
       ]}
+      onPress={onPress}
     >
       {text}
     </Text>
   );
 }
+
 
 export {
   KTHeadingOne,

@@ -7,12 +7,13 @@ import {
   kcErrorColor,
   kcPrimaryColor,
   kcWhite,
+  kcDarkGrey,
 } from "../../../constants/AppColors";
 import { useForm, Controller } from "react-hook-form";
 import KTContainer from "../../../components/Container/KTContainer";
 import SizedBox from "../../../components/SizedBox/SizedBox";
 import KTInput from "../../../components/Input/KTInput";
-import { KTCaption } from "../../../components/Text/KTText";
+import { KTCaption, KTHeadingOne, KTHeadingFive } from "../../../components/Text/KTText";
 
 function LoginScreen({ navigation }) {
   const {
@@ -30,6 +31,16 @@ function LoginScreen({ navigation }) {
           color={kcPrimaryColor}
           onPress={() => navigation.goBack()}
         />
+        <SizedBox height={20} />
+      <KTHeadingOne
+            text="Welcome back!"
+            color={kcPrimaryColor}
+            fontWeight={"bold"}
+          />
+          <KTHeadingFive
+            text="Log in to your account!"
+            color={kcDarkGrey}
+          />
         <SizedBox height={20} />
         <Controller
           control={control}
@@ -72,6 +83,14 @@ function LoginScreen({ navigation }) {
           name="password"
           defaultValue=""
         />
+        
+        {/* Forgot password text */ }
+        <KTCaption
+        text="Forgot Password?" onPress={() =>navigation.navigate("ForgotPassword")}
+        color={kcDarkGrey}
+        textAlign="right"
+        ></KTCaption>
+
         <SizedBox small />
         {errors.password == "required" && (
           <KTCaption

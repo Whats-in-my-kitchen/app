@@ -25,6 +25,7 @@ const StyleKTText = StyleSheet.create({
   },
   caption: {
     fontSize: 14,
+    textAlign: 'right'
   },
 });
 
