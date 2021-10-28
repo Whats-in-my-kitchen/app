@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 import { kcWhite } from "../../constants/AppColors";
 
-const StylesRegisterScreen = StyleSheet.create({
-
+const StyleForgotPasswordScreen = StyleSheet.create({
+    
 });
 
-export default StylesRegisterScreen;
+export default StyleForgotPasswordScreen;

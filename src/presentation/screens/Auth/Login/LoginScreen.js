@@ -8,13 +8,14 @@ import {
   kcErrorColor,
   kcPrimaryColor,
   kcWhite,
+  kcDarkGrey,
 } from "../../../constants/AppColors";
 import { connect } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import KTContainer from "../../../components/Container/KTContainer";
 import SizedBox from "../../../components/SizedBox/SizedBox";
 import KTInput from "../../../components/Input/KTInput";
-import { KTCaption, KTHeadingOne } from "../../../components/Text/KTText";
+import { KTCaption, KTHeadingOne, KTHeadingFive } from "../../../components/Text/KTText";
 import { loginUser } from "../../../../application/redux/action/auth";
 
 const LoginScreen=({ navigation,loginUser }) => {
@@ -35,9 +36,15 @@ const LoginScreen=({ navigation,loginUser }) => {
           onPress={() => navigation.goBack()}
         />
         <SizedBox height={20} />
-        <Text>
-          Login
-        </Text>
+      <KTHeadingOne
+            text="Welcome back!"
+            color={kcPrimaryColor}
+            fontWeight={"bold"}
+          />
+          <KTHeadingFive
+            text="Log in to your account!"
+            color={kcDarkGrey}
+          />
         <SizedBox height={20} />
         <Controller
           control={control}
@@ -80,6 +87,14 @@ const LoginScreen=({ navigation,loginUser }) => {
           name="password"
           defaultValue=""
         />
+        
+        {/* ffForgot password text */ }
+        <KTCaption
+        text="Forgot Password?" onPress={() =>navigation.navigate("ForgotPassword")}
+        color={kcDarkGrey}
+        textAlign="right"
+        ></KTCaption>
+
         <SizedBox small />
         {errors.password == "required" && (
           <KTCaption
