@@ -7,7 +7,7 @@ const StylesKTInput = StyleSheet.create({
     color: kcDarkGrey,
     fontWeight:"400",
     fontSize:16,
-    height: 42,
+    height: 50,
     padding: 10,
     width: 350,
     borderRadius: 8,
