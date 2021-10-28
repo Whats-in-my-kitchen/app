@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Text,Touchable,View } from 'react-native';
+import { Text,View } from 'react-native';
 import shoppingListStyles from './ShoppingListStyles';
-import {Entypo} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { kcWhite } from '../../constants/AppColors';
+import { createStackNavigator, createAppContainer } from '@react-navigation/stack';
+import CreateShoppingListScreen from './CreateShoppingListScreen';
 
 
 function ShoppingListScreen(props) {
@@ -17,10 +18,7 @@ function ShoppingListScreen(props) {
             {/* Creating a button.  */}
             <TouchableOpacity 
                 style={shoppingListStyles.buttonStyle}
-                onPress={()=>{
-                    alert("Create new List");
-                }}
-                >
+                onPress={()=>props.navigation.navigate('CreateShoppingList')}>
                     <Text style={shoppingListStyles.buttonText}>+</Text> 
             </TouchableOpacity>
         </View>
