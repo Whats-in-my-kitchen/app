@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { kcWhite } from "../../constants/AppColors";
+import { kcPrimaryColor, kcWhite } from "../../constants/AppColors";
 
 const StyleKTText = StyleSheet.create({
   baseStyle:{
@@ -7,9 +7,11 @@ const StyleKTText = StyleSheet.create({
   },
   headingOne: {
     fontSize: 32,
+    color: kcPrimaryColor
   },
   headingTwo: {
     fontSize: 27,
+    
   },
   headingThree: {
     fontSize: 24,

@@ -1,11 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Text,View } from 'react-native';
-function SettingsScreen(props) {
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { kcWhite } from '../../constants/AppColors';
+function SettingsScreen({navigation}) {
     return (
-        <View>
-        <Text>Settings Screen</Text>
-    </View>
+        <SafeAreaView style={{backgroundColor:kcWhite, height:"100%"}}>
+            <Text>
+                Settings
+                
+            </Text>
+        </SafeAreaView>
+    
     )
 }
 

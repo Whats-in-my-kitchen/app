@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { AntDesign } from "@expo/vector-icons";
+import {Text} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import KTButton from "../../../components/Button/KTButton";
 import {
@@ -9,19 +10,26 @@ import {
   kcWhite,
   kcDarkGrey,
 } from "../../../constants/AppColors";
+import { connect } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import KTContainer from "../../../components/Container/KTContainer";
 import SizedBox from "../../../components/SizedBox/SizedBox";
 import KTInput from "../../../components/Input/KTInput";
+<<<<<<< HEAD
 import { KTCaption, KTHeadingOne, KTHeadingFive } from "../../../components/Text/KTText";
+=======
+import { KTCaption, KTHeadingOne } from "../../../components/Text/KTText";
+import { loginUser } from "../../../../application/redux/action/auth";
+>>>>>>> c94571558cb87203ca1d1be7c5f1dfa86d2d2837
 
-function LoginScreen({ navigation }) {
+const LoginScreen=({ navigation,loginUser }) => {
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => loginUser();
+ 
   return (
     <SafeAreaView style={{ backgroundColor: kcWhite }}>
       <KTContainer>
@@ -32,6 +40,7 @@ function LoginScreen({ navigation }) {
           onPress={() => navigation.goBack()}
         />
         <SizedBox height={20} />
+<<<<<<< HEAD
       <KTHeadingOne
             text="Welcome back!"
             color={kcPrimaryColor}
@@ -41,6 +50,11 @@ function LoginScreen({ navigation }) {
             text="Log in to your account!"
             color={kcDarkGrey}
           />
+=======
+        <Text>
+          Login
+        </Text>
+>>>>>>> c94571558cb87203ca1d1be7c5f1dfa86d2d2837
         <SizedBox height={20} />
         <Controller
           control={control}
@@ -62,14 +76,14 @@ function LoginScreen({ navigation }) {
         {errors.emailAddress && (
           <KTCaption text="Email is Required" color={kcErrorColor}></KTCaption>
         )}
-        <SizedBox large />
+        <SizedBox small />
 
         {/* Password Field Button */}
         <Controller
           control={control}
           rules={{
             required: true,
-             min: 6,
+            min: 6,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <KTInput
@@ -113,4 +127,8 @@ LoginScreen.propTypes = {
   navigation: PropTypes.object,
 };
 
-export default LoginScreen;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { loginUser })(LoginScreen);

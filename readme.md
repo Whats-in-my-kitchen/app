@@ -7,9 +7,9 @@
 6. Install yarn: ```npm install --global yarn```
 7. Once you have everything installed. Run ```yarn install``` to install the dependencies and pakcages used in this project. 
 8. Run ```yarn start``` or ```expo start``` on your terminal to get this started. 
-
-
 Note: You need to have Andriod Studio installed on your system. 
+10. We are using yarn for package management. So if you need to install any packages use ```yarn add package-name``` instead of ```npm install package-name```
+11. Also we are using expo for this project. So please make yourself familiar with expo: https://docs.expo.dev/
 
 ***Folder Structure*** 
 This project is divided into 4 layers:
