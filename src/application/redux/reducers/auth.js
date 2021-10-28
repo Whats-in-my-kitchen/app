@@ -15,10 +15,9 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  const { type } = action;
+  const { type, payload } = action;
   switch (type) {
     case LOGIN_SUCCESS:
-     
       return {
         ...state,
         payload,
@@ -31,7 +30,7 @@ export default function (state = initialState, action) {
     case LOGIN_FAILED:
     case RESET_PASSWORD:
     case LOGOUT:
-      localStorage.removeItem("token");
+      // localStorage.removeItem("token");
       return {
         ...state,
         token: null,

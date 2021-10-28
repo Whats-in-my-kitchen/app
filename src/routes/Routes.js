@@ -18,13 +18,9 @@ const Routes = ({ RouteProps, isAuthenticated }) => {
     return <ActivityIndicator size="large"></ActivityIndicator>;
   }
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
-        <NavigationContainer>
-          {user ? <AppTabs /> : <AuthStack></AuthStack>}
-        </NavigationContainer>
-      </PersistGate>
-    </Provider>
+    <NavigationContainer>
+      {user ? <AppTabs /> : <AuthStack></AuthStack>}
+    </NavigationContainer>
   );
 };
 

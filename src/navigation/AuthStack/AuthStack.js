@@ -16,7 +16,7 @@ function AuthStack(props) {
             <Stack.Screen name="Welcome" component={WelcomeScreen} options = {{header:()=>null}}/>
             <Stack.Screen name="Signup" component={RegisterScreen} options = {{header:()=>null}}/>
             <Stack.Screen name="Login" component={LoginScreen} options = {{header:()=>null}}/>
-            
+
           </Stack.Navigator>
     )
 }
