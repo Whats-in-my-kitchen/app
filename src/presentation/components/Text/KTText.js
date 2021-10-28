@@ -93,7 +93,7 @@ function KTBody({ text, color, fontWeight }) {
   );
 }
 
-function KTCaption({ text, color, fontWeight, onPress }) {
+function KTCaption({ text, color, fontWeight, onPress, textAlign }) {
   return (
     <Text
       style={[
@@ -101,8 +101,10 @@ function KTCaption({ text, color, fontWeight, onPress }) {
         StyleKTText.caption,
         color ? { color: color } : null,
         fontWeight ? { fontWeight: fontWeight } : null,
+        textAlign,
       ]}
       onPress={onPress}
+      
     >
       {text}
     </Text>

@@ -25,4 +25,3 @@ AuthStack.propTypes = {
 }
 
 export default AuthStack;
-

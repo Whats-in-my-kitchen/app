@@ -84,7 +84,7 @@ function LoginScreen({ navigation }) {
           defaultValue=""
         />
         
-        {/* Forgot password text */ }
+        {/* ffForgot password text */ }
         <KTCaption
         text="Forgot Password?" onPress={() =>navigation.navigate("ForgotPassword")}
         color={kcDarkGrey}

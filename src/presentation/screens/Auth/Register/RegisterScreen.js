@@ -143,7 +143,6 @@ return (
         ></KTCaption>
       )}
 
-
       <KTButton
         title="Sign Up"
         onPress={handleSubmit(onSubmit)}
