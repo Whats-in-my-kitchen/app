@@ -11,7 +11,7 @@ import CreateShoppingListScreen from './CreateShoppingListScreen';
 
 function ShoppingListScreen(props) {
     return (
-        <SafeAreaView style = {{flex:1,backgroundColor:kcWhite, height:"100%"}}>
+        <SafeAreaView style = {{flex:1,backgroundColor:kcWhite, height:"100%", alignItems:'center'}}>
         <View  style={shoppingListStyles.titleLineStyle}>
 
             <Text style={shoppingListStyles.titleStyle}>Shopping List</Text>
@@ -24,7 +24,10 @@ function ShoppingListScreen(props) {
         </View>
         
              <View style= {{flex:1, alignItems:'center', justifyContent:'center'}}>
-            <Text>
+            <Text style={{fontSize:32,
+        fontWeight:'bold',
+        color:'white',
+        textAlign:'center'}}>
                 Create a new list to get started!
             </Text> 
             </View>

@@ -7,18 +7,17 @@ const shoppingListStyles = StyleSheet.create({
 
     },
     titleLineStyle:{
-        //backgroundColor:'maroon',
-        marginTop:10,
-        paddingVertical:10,
+        width:'94%',
         paddingHorizontal: 30,
         flexDirection:"row",
-        alignItems:'center'
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     buttonStyle:{
         backgroundColor:'#f5304d',//color of the plus button
         borderRadius:8,
         width:40,
-        marginStart:'60%'
+        alignSelf:'flex-end',
     },
     buttonText:{
         fontSize:32,
