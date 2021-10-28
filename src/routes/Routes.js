@@ -3,13 +3,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { ActivityIndicator, View } from "react-native";
 import { AppTabs } from "../navigation/Tabs/AppTabs";
 import AuthStack from "../navigation/AuthStack/AuthStack";
-import { Provider } from "react-redux";
+import { Provider, connect } from "react-redux";
 import { store, persistor } from "../application/redux/store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { loginUser } from "../application/redux/action/auth";
 
-export const Routes = ({ RouteProps }) => {
+const Routes = ({ RouteProps, isAuthenticated }) => {
   const [loading, setLoading] = useState(false);
-  const user = false;
+  const user = isAuthenticated;
   useEffect(() => {
     setLoading(false);
   }, [loading]);
@@ -26,3 +27,9 @@ export const Routes = ({ RouteProps }) => {
     </Provider>
   );
 };
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, {})(Routes);

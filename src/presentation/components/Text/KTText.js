@@ -2,16 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Text } from "react-native";
 import StyleKTText from "./StyleKTText";
-import { kcErrorColor } from "../../constants/AppColors";
+import { kcPrimaryColor } from "../../constants/AppColors";
 
 function KTHeadingOne({ text, color, fontWeight }) {
   return (
     <Text
       style={[
-        StyleKTText.baseStyle,
         StyleKTText.headingOne,
-        color ? { color: color } : null,
-        { fontWeight: fontWeight ? fontWeight : "bold" },
+        { fontWeight: fontWeight ? fontWeight : "bold", color: color ?? kcPrimaryColor },
       ]}
     >
       {text}
