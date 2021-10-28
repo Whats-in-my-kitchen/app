@@ -8,8 +8,10 @@ function KTHeadingOne({ text, color, fontWeight }) {
   return (
     <Text
       style={[
+        StyleKTText.baseStyle,
         StyleKTText.headingOne,
-        { fontWeight: fontWeight ? fontWeight : "bold", color: color ?? kcPrimaryColor },
+        color ? { color: color } : null,
+        { fontWeight: fontWeight ? fontWeight : "bold" },
       ]}
     >
       {text}

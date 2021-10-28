@@ -15,12 +15,8 @@ import { useForm, Controller } from "react-hook-form";
 import KTContainer from "../../../components/Container/KTContainer";
 import SizedBox from "../../../components/SizedBox/SizedBox";
 import KTInput from "../../../components/Input/KTInput";
-<<<<<<< HEAD
 import { KTCaption, KTHeadingOne, KTHeadingFive } from "../../../components/Text/KTText";
-=======
-import { KTCaption, KTHeadingOne } from "../../../components/Text/KTText";
 import { loginUser } from "../../../../application/redux/action/auth";
->>>>>>> c94571558cb87203ca1d1be7c5f1dfa86d2d2837
 
 const LoginScreen=({ navigation,loginUser }) => {
   const {
@@ -40,7 +36,6 @@ const LoginScreen=({ navigation,loginUser }) => {
           onPress={() => navigation.goBack()}
         />
         <SizedBox height={20} />
-<<<<<<< HEAD
       <KTHeadingOne
             text="Welcome back!"
             color={kcPrimaryColor}
@@ -50,11 +45,6 @@ const LoginScreen=({ navigation,loginUser }) => {
             text="Log in to your account!"
             color={kcDarkGrey}
           />
-=======
-        <Text>
-          Login
-        </Text>
->>>>>>> c94571558cb87203ca1d1be7c5f1dfa86d2d2837
         <SizedBox height={20} />
         <Controller
           control={control}
