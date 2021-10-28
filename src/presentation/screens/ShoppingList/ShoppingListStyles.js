@@ -17,7 +17,9 @@ const shoppingListStyles = StyleSheet.create({
         backgroundColor:'#f5304d',//color of the plus button
         borderRadius:8,
         width:40,
+        height:36,
         alignSelf:'flex-end',
+        justifyContent:'center'
     },
     buttonText:{
         fontSize:32,
