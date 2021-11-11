@@ -7,9 +7,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { kcWhite } from '../../constants/AppColors';
 import { createStackNavigator, createAppContainer } from '@react-navigation/stack';
 import CreateShoppingListScreen from './CreateShoppingListScreen';
+import { connect } from 'react-redux';
 
 
-function ShoppingListScreen(props) {
+
+function ShoppingListScreen({shoppingList, navigation}) {
     return (
         <SafeAreaView style = {{flex:1,backgroundColor:kcWhite, height:"100%", alignItems:'center'}}>
         <View  style={shoppingListStyles.titleLineStyle}>
@@ -18,17 +20,16 @@ function ShoppingListScreen(props) {
             {/* Creating a button.  */}
             <TouchableOpacity 
                 style={shoppingListStyles.buttonStyle}
-                onPress={()=>props.navigation.navigate('CreateShoppingList')}>
+                onPress={()=>navigation.navigate('CreateShoppingList')}>
                     <Text style={shoppingListStyles.buttonText}>+</Text> 
             </TouchableOpacity>
         </View>
         
              <View style= {{flex:1, alignItems:'center', justifyContent:'center'}}>
-            <Text style={{fontSize:32,
-        fontWeight:'bold',
-        color:'white',
+            <Text style={{fontSize:12,
+        color:'gray',
         textAlign:'center'}}>
-                Create a new list to get started!
+                {JSON.stringify(shoppingList)}
             </Text> 
             </View>
         </SafeAreaView>
@@ -39,5 +40,8 @@ ShoppingListScreen.propTypes = {
 
 }
 
-export default ShoppingListScreen
-
+const mapStateToProps = (state) => ({
+    shoppingList: state.shoppingList.shoppingList,
+  });
+  
+export default connect(mapStateToProps, {})(ShoppingListScreen);

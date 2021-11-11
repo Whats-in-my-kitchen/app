@@ -6,7 +6,7 @@ import {
 const initialState = {
   shoppingList: [
     {
-      id: 1,
+      id: 0,
       name: "Common",
       groceryItem: [
         { id: 1, name: "Egg", count: 2, status: false },
@@ -28,12 +28,12 @@ export default function (state = initialState, action) {
     case ADD_GROCERY_TO_SHOPPING_LIST:
       return {
         ...state,
-        groceryList: [payload, ...state.groceryList],
+        shoppingList: [payload, ...state.shoppingList],
       };
     case REMOVE_GROCERY_FROM_SHOPPING_LIST:
       return {
         ...state,
-        groceryList: state.groceryList.filter(
+        shoppingList: state.shoppingList.filter(
           (grocery) => grocery._id == payload
         ),
       };
