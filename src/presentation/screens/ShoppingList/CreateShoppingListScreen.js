@@ -6,12 +6,30 @@ import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import shoppingListStyles from "./ShoppingListStyles";
 import { kcWhite } from '../../constants/AppColors';
 import { FontAwesome5 } from '@expo/vector-icons';
+import {ListItem, Avatar, Icon} from 'react-native-elements'
+import StylesWelcomeScreen from "../Welcome/WelcomeScreenStyles";
+import { KTUserList } from "../../components/ListTile/KTListTile";
+
+const list= [
+  {
+    username: 'Blake',
+    avatar_url: 'imgur.com/a/WegoCBq',
+  },
+  {
+    username: 'Sherry',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+  },
+  {
+    username: 'Nathan',
+    avatar_url: 'xyz',
+  }
+]
 
 function CreateShoppingListScreen({ navigation }) {
   return (
     <SafeAreaView  style = {{flex:1,backgroundColor:kcWhite, height:"100%"}}> 
       <View style= {{alignItems:'center', height: 256}}>
-        <View  style={shoppingListStyles.titleLineStyle}>
+        <View style={shoppingListStyles.titleLineStyle}>
 
           <Text style={shoppingListStyles.titleStyle}>Create List</Text>
 
@@ -30,18 +48,23 @@ function CreateShoppingListScreen({ navigation }) {
         </View>
       </View>
 
-      <View style = {{alignItems:'center'}}>
-      <View  style={shoppingListStyles.titleLineStyle}>
+    
 
-        <Text style={shoppingListStyles.titleStyle}>Share With</Text>
-
+        
+        <View>
+          <View style={shoppingListStyles.titleLineStyle}>
+        <Text style={shoppingListStyles.titleStyle}>Share with</Text>
         <TouchableOpacity 
-            style={{width:40,
-              alignSelf:'flex-end',}}>
-                <Text style ={{fontSize:12,color:'gray',textAlign:'center'}}>View all</Text> 
+            style={{width:50,
+              alignSelf:'flex-end'}}>
+        <Text style ={{fontSize:13,color:'gray',textAlign:'center'}}>View all</Text> 
         </TouchableOpacity>
-      </View>
-      </View>
+        </View>
+          {
+            <KTUserList
+            userList={list}/>
+          }
+        </View>
     </SafeAreaView>
   );
 }
