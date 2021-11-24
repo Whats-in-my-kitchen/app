@@ -21,8 +21,6 @@ function KTList({item, index}) {
 
 function KTUserList({userList,}){
 return (
-  <View>
-  {
     userList.map((user,i)=>(
       <ListItem key={i} bottomDivider>
         <Avatar
@@ -35,8 +33,7 @@ return (
         </ListItem.Content>
       </ListItem>
     ))
-    }
-</View>
+    
 );
 }
 
