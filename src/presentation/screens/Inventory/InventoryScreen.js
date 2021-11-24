@@ -11,24 +11,13 @@ import AddGroceryItemScreen from './AddGroceryItemScreen';
 function InventoryScreen(props) {
     return (
         <SafeAreaView style={{flex:1,backgroundColor:kcWhite, height:"100%", alignItems:'center'}}>
-        <View style={inventoryScreenStyles.titleLineStyle}>
-
-           <Text style ={inventoryScreenStyles.titleStyle}>Inventory</Text>
-           {/* Creating a button */}
-           <TouchableOpacity
-                style={inventoryScreenStyles.buttonStyle}
-                onPress={()=>props.navigation.navigate('AddGroceryItemScreen')}>
-                    <Text style={inventoryScreenStyles.buttonText}>+</Text>
-                    </TouchableOpacity>
-        </View>
-
+            
             <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
-                <Text style={{fontSize:32,
-                fontWeight:'bold',
-                color:'white',
-                textAlign:'center'}}>
-                    Add a grocery item to get started!
-                </Text>
+                <TouchableOpacity
+                style={inventoryScreenStyles.inventoryButtonStyle}
+                onPress={()=>props.navigation.navigate('Add Grocery Items')}>
+                    <Text style={inventoryScreenStyles.inventoryButtonText}>Add items to Inventory</Text>
+                    </TouchableOpacity>
             </View>
        </SafeAreaView>
     )

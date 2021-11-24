@@ -14,22 +14,15 @@ function ShoppingListScreen(props) {
         <SafeAreaView style = {{flex:1,backgroundColor:kcWhite, height:"100%", alignItems:'center'}}>
         <View  style={shoppingListStyles.titleLineStyle}>
 
-            <Text style={shoppingListStyles.titleStyle}>Shopping List</Text>
-            {/* Creating a button.  */}
-            <TouchableOpacity 
-                style={shoppingListStyles.buttonStyle}
-                onPress={()=>props.navigation.navigate('CreateShoppingList')}>
-                    <Text style={shoppingListStyles.buttonText}>+</Text> 
-            </TouchableOpacity>
+            
         </View>
         
              <View style= {{flex:1, alignItems:'center', justifyContent:'center'}}>
-            <Text style={{fontSize:32,
-        fontWeight:'bold',
-        color:'white',
-        textAlign:'center'}}>
-                Create a new list to get started!
-            </Text> 
+             <TouchableOpacity 
+                style={shoppingListStyles.buttonStyle}
+                onPress={()=>props.navigation.navigate('Create List')}>
+                    <Text style={shoppingListStyles.buttonText}>Create shopping list</Text> 
+            </TouchableOpacity>
             </View>
         </SafeAreaView>
     )

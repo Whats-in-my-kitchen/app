@@ -7,6 +7,7 @@ import { kcWhite} from '../../constants/AppColors';
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome5 } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+import SizedBox from "../../components/SizedBox/SizedBox";
 
 function AddGroceryItemScreen({ navigation }) {
   return (
@@ -14,12 +15,6 @@ function AddGroceryItemScreen({ navigation }) {
       <View style= {{alignItems:'center', height: 256}}>
         <View style={inventoryScreenStyles.titleLineStyle}>
 
-        <Text style={inventoryScreenStyles.titleStyle}>Add Items</Text>
-
-        <TouchableOpacity
-            style={inventoryScreenStyles.buttonStyle}>
-              <Text style={inventoryScreenStyles.buttonText}>+</Text>
-        </TouchableOpacity>
         </View>
 
         <View style={{width:'100%', alignItems:'center', marginTop:16}}>
@@ -28,6 +23,13 @@ function AddGroceryItemScreen({ navigation }) {
             <TextInput style={{width:'80%', height:50, margin:12, backgroundColor:'#e5e5e5', borderRadius:8, paddingLeft:15}}
             placeholder='Expected Item Count'/>
           </View>
+
+          
+          <TouchableOpacity
+                style={inventoryScreenStyles.inventoryButtonStyle}
+                onPress={()=>props.navigation.navigate('AddGroceryItemScreen')}>
+                    <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
+                    </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

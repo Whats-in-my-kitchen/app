@@ -10,20 +10,6 @@ import {ListItem, Avatar, Icon} from 'react-native-elements'
 import StylesWelcomeScreen from "../Welcome/WelcomeScreenStyles";
 import { KTUserList } from "../../components/ListTile/KTListTile";
 
-const list= [
-  {
-    username: 'Blake',
-    avatar_url: 'imgur.com/a/WegoCBq',
-  },
-  {
-    username: 'Sherry',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-  },
-  {
-    username: 'Nathan',
-    avatar_url: 'xyz',
-  }
-]
 
 function CreateShoppingListScreen({ navigation }) {
   return (
@@ -31,13 +17,7 @@ function CreateShoppingListScreen({ navigation }) {
       <View style= {{alignItems:'center', height: 256}}>
         <View style={shoppingListStyles.titleLineStyle}>
 
-          <Text style={shoppingListStyles.titleStyle}>Create List</Text>
-
-          <TouchableOpacity 
-              style={shoppingListStyles.buttonStyle}>
-                  {/* <Text style={shoppingListStyles.buttonText}> ↓ </Text>  */}
-                  <FontAwesome5 style={{textAlign:'center', fontSize:14}} name="save"  color="white" />
-          </TouchableOpacity>
+        
         </View>
 
         <View style={{width:'100%', alignItems:'center', marginTop:16}}>
@@ -46,25 +26,15 @@ function CreateShoppingListScreen({ navigation }) {
           <TextInput style={{width:'80%', height:75, margin:12, backgroundColor:'#e5e5e5',borderRadius:8, paddingLeft:15}}
             placeholder='Description (Optional)'/>
         </View>
+        <TouchableOpacity
+                style={shoppingListStyles.buttonStyle}
+                onPress={()=>props.navigation.navigate()}>
+                    <Text style={shoppingListStyles.buttonText}>Save shopping list</Text>
+                    </TouchableOpacity>
       </View>
 
-    
+      
 
-        
-        <View>
-          <View style={shoppingListStyles.titleLineStyle}>
-        <Text style={shoppingListStyles.titleStyle}>Share with</Text>
-        <TouchableOpacity 
-            style={{width:50,
-              alignSelf:'flex-end'}}>
-        <Text style ={{fontSize:13,color:'gray',textAlign:'center'}}>View all</Text> 
-        </TouchableOpacity>
-        </View>
-          {
-            <KTUserList
-            userList={list}/>
-          }
-        </View>
     </SafeAreaView>
   );
 }
