@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { createStackNavigator } from "@react-navigation/stack";
 import InventoryScreen from "./InventoryScreen";
 import AddGroceryItemScreen from "./AddGroceryItemScreen";
@@ -25,6 +25,8 @@ function InventoryStack({ navigation }) {
   );
 }
 
-InventoryStack.propTypes = {};
+InventoryStack.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default InventoryStack;
