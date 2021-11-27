@@ -14,19 +14,20 @@ const shoppingListStyles = StyleSheet.create({
         justifyContent:'space-between'
     },
     buttonStyle:{
-        backgroundColor:'#f5304d',//color of the plus button
+        backgroundColor:'#f5304d',//color of the inventory button
         borderRadius:8,
-        width:40,
-        height:36,
-        alignSelf:'flex-end',
-        justifyContent:'center'
+        height: 40,
+        width: "100%",
+        alignSelf:'stretch',
+        justifyContent:'center',
+        padding: 30,
     },
     buttonText:{
-        fontSize:32,
-        fontWeight:'bold',
+        fontSize:20,
+        fontWeight:'normal',
         color:'white',
         textAlign:'center'
-    }
+    },
 })
 
 export default shoppingListStyles;

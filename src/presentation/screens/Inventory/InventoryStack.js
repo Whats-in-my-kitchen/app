@@ -18,7 +18,7 @@ function InventoryStack({ navigation }) {
     >
       <Stack.Screen name="Inventory" component={InventoryScreen}></Stack.Screen>
       <Stack.Screen
-        name="AddGroceryItemScreen"
+        name="Add Grocery Items"
         component={AddGroceryItemScreen}
       ></Stack.Screen>
     </Stack.Navigator>
