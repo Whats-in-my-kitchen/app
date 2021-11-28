@@ -24,7 +24,7 @@ function AddGroceryItemScreen({ navigation }) {
 
         <TouchableOpacity
           style={inventoryScreenStyles.inventoryButtonStyle}
-          onPress={() => navigation.navigate('AddGroceryItemScreen')}>
+          onPress={() => navigation.navigate('Add Grocery Items')}>
           <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
         </TouchableOpacity>
       </View>

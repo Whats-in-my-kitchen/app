@@ -1,6 +1,7 @@
 import {
   ADD_GROCERY_TO_SHOPPING_LIST,
   REMOVE_GROCERY_FROM_SHOPPING_LIST,
+  ADD_SHOPPING_LIST,
 } from "../action/types";
 
 const initialState = {

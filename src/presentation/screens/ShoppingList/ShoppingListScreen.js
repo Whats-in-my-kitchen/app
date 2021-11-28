@@ -9,7 +9,7 @@ import { createStackNavigator, createAppContainer } from '@react-navigation/stac
 import CreateShoppingListScreen from './CreateShoppingListScreen';
 import { connect } from 'react-redux';
 
-function ShoppingListScreen(props) {
+function ShoppingListScreen({ shoppingList, navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", alignItems: 'center' }}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -25,7 +25,7 @@ function ShoppingListScreen(props) {
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <TouchableOpacity
                     style={shoppingListStyles.buttonStyle}
-                    onPress={() => props.navigation.navigate('Create List')}>
+                    onPress={() => navigation.navigate('Create List')}>
                     <Text style={shoppingListStyles.buttonText}>Create shopping list</Text>
                 </TouchableOpacity>
             </View>

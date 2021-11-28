@@ -22,9 +22,9 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    createShoppingList(data, navigation)
-
-
+    console.log(shoppingList)
+    createShoppingList(data)
+    navigation.navigate('Shopping List')
   };
 
   return (
@@ -70,7 +70,7 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
         </View>
         <TouchableOpacity
           style={shoppingListStyles.buttonStyle}
-          onPress={() => onSubmit}>
+          onPress={handleSubmit(onSubmit)}>
           <Text style={shoppingListStyles.buttonText}>Save shopping list</Text>
         </TouchableOpacity>
       </View>
