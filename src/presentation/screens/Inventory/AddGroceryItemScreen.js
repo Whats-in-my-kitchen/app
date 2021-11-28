@@ -22,7 +22,6 @@ function AddGroceryItemScreen({ navigation }) {
             placeholder='Expected Item Count' />
         </View>
 
-
         <TouchableOpacity
           style={inventoryScreenStyles.inventoryButtonStyle}
           onPress={() => navigation.navigate('AddGroceryItemScreen')}>

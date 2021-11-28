@@ -25,6 +25,11 @@ const initialState = {
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case ADD_SHOPPING_LIST:
+      return {
+        ...state,
+        shoppingList: [payload, ...state.shoppingList],
+      }
     case ADD_GROCERY_TO_SHOPPING_LIST:
       return {
         ...state,

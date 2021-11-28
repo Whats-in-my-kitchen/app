@@ -9,7 +9,7 @@ import {
 } from "../action/types";
 
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   loading: true,
   user: {},
 };

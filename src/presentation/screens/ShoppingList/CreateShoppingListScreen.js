@@ -4,29 +4,76 @@ import { Text, View, KeyboardAvoidingView } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import shoppingListStyles from "./ShoppingListStyles";
-import { kcWhite } from '../../constants/AppColors';
+import { useForm, Controller } from "react-hook-form";
+import { kcErrorColor, kcWhite } from '../../constants/AppColors';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { createShoppingList } from "../../../application/redux/action/shoppingList";
+import { connect } from "react-redux";
+import SizedBox from "../../components/SizedBox/SizedBox";
+import { KTCaption } from "../../components/Text/KTText";
+import KTInput from "../../components/Input/KTInput";
 
-function CreateShoppingListScreen({ navigation }) {
+
+
+function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList }) {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    createShoppingList(data, navigation)
+
+
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
-      <View style={{ alignItems: 'center', height: 256 }}>
-        <View style={shoppingListStyles.titleLineStyle}>
-        </View>
-        <View style={{ width: '100%', alignItems: 'center', marginTop: 16 }}>
-          <TextInput style={{ width: '80%', height: 50, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
-            placeholder='Name of the list' />
-          <TextInput style={{ width: '80%', height: 75, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
-            placeholder='Description (Optional)' />
+      <View style={{ alignItems: 'center', height: '100%' }}>
+        <View style={{ width: '90%', alignItems: 'center', marginTop: 16 }}>
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <KTInput
+                placeholder={"List Name"}
+                onBlur={onBlur}
+                onChange={onChange}
+                value={value}
+              />
+            )}
+            name="listName"
+            defaultValue=""
+          />
+          <SizedBox small />
+          {errors.listName && (
+            <KTCaption text="List name is required" color={kcErrorColor}></KTCaption>
+          )}
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <KTInput
+                placeholder={"Description (Optional)"}
+                onBlur={onBlur}
+                onChange={onChange}
+                value={value}
+              />
+            )}
+            name="listDescription"
+            defaultValue=""
+          />
         </View>
         <TouchableOpacity
           style={shoppingListStyles.buttonStyle}
-          onPress={() => navigation.navigate('Shopping List')}>
+          onPress={() => onSubmit}>
           <Text style={shoppingListStyles.buttonText}>Save shopping list</Text>
         </TouchableOpacity>
       </View>
-
-
-
     </SafeAreaView>
   );
 }
@@ -35,4 +82,8 @@ CreateShoppingListScreen.propTypes = {
   navigation: PropTypes.object,
 };
 
-export default CreateShoppingListScreen;
+const mapStateToProps = (state) => ({
+  shoppingList: state.shoppingList.shoppingList,
+});
+
+export default connect(mapStateToProps, { createShoppingList })(CreateShoppingListScreen);
