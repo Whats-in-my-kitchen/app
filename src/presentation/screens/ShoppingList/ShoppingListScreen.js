@@ -8,17 +8,31 @@ import { kcWhite } from '../../constants/AppColors';
 import { createStackNavigator, createAppContainer } from '@react-navigation/stack';
 import CreateShoppingListScreen from './CreateShoppingListScreen';
 import { connect } from 'react-redux';
+import { KTUserList } from '../../components/ListTile/KTListTile';
+import { ListItem, Avatar, Icon, Image } from "react-native-elements";
 
 function ShoppingListScreen({ shoppingList, navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", alignItems: 'center' }}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{
-                    fontSize: 12,
+                    fontSize: 18,
                     color: 'gray',
-                    textAlign: 'center'
                 }}>
-                    {JSON.stringify(shoppingList)}
+                    {
+                    shoppingList.map((id, i) => (
+                    <ListItem key={i}>
+                    <Avatar
+                    square
+                    onPress={() => console.log("avatar pressed")}
+                    title={id.name[0]} />
+                    <ListItem.Content>
+                    <ListItem.Title>{id.name}</ListItem.Title>
+                    </ListItem.Content>
+                    <ListItem.Chevron/>
+                </ListItem>
+                    ))
+                    }
                 </Text>
             </View>
 

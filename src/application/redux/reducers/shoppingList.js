@@ -16,10 +16,15 @@ const initialState = {
       ],
     },
     {
-      id: 1,
+      id: 2,
       name: "Party at ScoobyDoobyDo",
       groceryItem: [{ id: 1, name: "Beer", count: 12, status: false }, { id: 1, name: "Chips", count: 23, status: true }],
     },
+    {
+      id: 3,
+      name: "asdfjlksdf",
+      groceryItem: [{id: 1, name: "Cookies", count:1, status: true}]
+    }
   ],
 };
 
