@@ -19,18 +19,19 @@ function KTList({ item, index }) {
   );
 }
 
-function KTUserList({ userList }) {
+function KTUserList({ shoppingList }) {
   return (
-    userList.map((user, i) => (
+    shoppingList.map((id, i) => (
       <ListItem key={i} bottomDivider>
         <Avatar
           rounded
           onPress={() => console.log("avatar pressed")}
-          title={user.username[0]}
-          source={{ uri: user.avatar_url }} />
+          title={id.name[0]} />
         <ListItem.Content>
-          <ListItem.Title>{user.username}</ListItem.Title>
+          <ListItem.Title>{id.name}</ListItem.Title>
+    <ListItem.Subtitle>{id.count}</ListItem.Subtitle>
         </ListItem.Content>
+        <ListItem.Chevron/>
       </ListItem>
     ))
   );
