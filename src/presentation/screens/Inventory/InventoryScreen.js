@@ -27,5 +27,4 @@ InventoryScreen.propTypes = {
 
 }
 
-export default InventoryScreen
-
+export default InventoryScreen;

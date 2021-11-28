@@ -45,5 +45,3 @@ const inventoryScreenStyles = StyleSheet.create({
 })
 
 export default inventoryScreenStyles;
-
-

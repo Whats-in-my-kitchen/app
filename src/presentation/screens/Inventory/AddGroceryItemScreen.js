@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {Text, View, KeyboardAvoidingView} from 'react-native';
