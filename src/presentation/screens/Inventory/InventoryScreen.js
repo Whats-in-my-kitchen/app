@@ -9,7 +9,7 @@ import { createStackNavigator, createAppContainer } from '@react-navigation/nati
 import AddGroceryItemScreen from './AddGroceryItemScreen';
 import { connect } from 'react-redux';
 
-function InventoryScreen({ navigation }) {
+function InventoryScreen({ navigation, groceryItems }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", alignItems: 'center' }}>
 
@@ -19,6 +19,10 @@ function InventoryScreen({ navigation }) {
                     onPress={() => navigation.navigate('Add Grocery Items')}>
                     <Text style={inventoryScreenStyles.inventoryButtonText}>Add items to Inventory</Text>
                 </TouchableOpacity>
+                <Text>
+                    {JSON.stringify(groceryItems)}
+
+                </Text>
             </View>
         </SafeAreaView>
     )
@@ -30,7 +34,7 @@ InventoryScreen.propTypes = {
 
 
 const mapStateToProps = (state) => ({
-    inventoryList: state.inventoryList,
+    groceryItems: state.inventoryList,
 });
 
 export default connect(mapStateToProps, {})(InventoryScreen);
