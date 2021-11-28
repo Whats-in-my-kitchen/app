@@ -1,35 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {Text, View, KeyboardAvoidingView} from 'react-native';
+import { Text, View, KeyboardAvoidingView } from 'react-native';
 import inventoryScreenStyles from "./InventoryScreenStyles";
-import { kcWhite} from '../../constants/AppColors';
+import { kcWhite } from '../../constants/AppColors';
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-import { FontAwesome5 } from '@expo/vector-icons';
-import * as ImagePicker from 'expo-image-picker';
-import SizedBox from "../../components/SizedBox/SizedBox";
+
 
 function AddGroceryItemScreen({ navigation }) {
   return (
-    <SafeAreaView style = {{flex:1,backgroundColor:kcWhite, height:"100%"}}>
-      <View style= {{alignItems:'center', height: 256}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
+      <View style={{ alignItems: 'center', height: 256 }}>
         <View style={inventoryScreenStyles.titleLineStyle}>
 
         </View>
 
-        <View style={{width:'100%', alignItems:'center', marginTop:16}}>
-          <TextInput style={{width:'80%', height:50, margin:12, backgroundColor:'#e5e5e5', borderRadius:8, paddingLeft:15}}
-            placeholder='Item Name'/>
-            <TextInput style={{width:'80%', height:50, margin:12, backgroundColor:'#e5e5e5', borderRadius:8, paddingLeft:15}}
-            placeholder='Expected Item Count'/>
-          </View>
+        <View style={{ width: '100%', alignItems: 'center', marginTop: 16 }}>
+          <TextInput style={{ width: '80%', height: 50, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
+            placeholder='Item Name' />
+          <TextInput style={{ width: '80%', height: 50, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
+            placeholder='Expected Item Count' />
+        </View>
 
-          
-          <TouchableOpacity
-                style={inventoryScreenStyles.inventoryButtonStyle}
-                onPress={()=>props.navigation.navigate('AddGroceryItemScreen')}>
-                    <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
-                    </TouchableOpacity>
+
+        <TouchableOpacity
+          style={inventoryScreenStyles.inventoryButtonStyle}
+          onPress={() => navigation.navigate('AddGroceryItemScreen')}>
+          <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

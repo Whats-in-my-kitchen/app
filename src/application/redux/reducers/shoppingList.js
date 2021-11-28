@@ -16,8 +16,8 @@ const initialState = {
     },
     {
       id: 1,
-      name: "Party at Duncan",
-      groceryItem: [{ id: 1, name: "Beer", count: 12, status: false }],
+      name: "Party at ScoobyDoobyDo",
+      groceryItem: [{ id: 1, name: "Beer", count: 12, status: false }, { id: 1, name: "Chips", count: 23, status: true }],
     },
   ],
 };
