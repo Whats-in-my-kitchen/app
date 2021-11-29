@@ -44,7 +44,7 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
                 value={value}
               />
             )}
-            name="listName"
+            name="name"
             defaultValue=""
           />
           <SizedBox small />
@@ -64,7 +64,7 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
                 value={value}
               />
             )}
-            name="listDescription"
+            name="description"
             defaultValue=""
           />
         </View>

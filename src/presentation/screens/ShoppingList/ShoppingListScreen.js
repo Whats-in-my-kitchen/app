@@ -13,8 +13,8 @@ import { ListItem, Avatar, Icon, Image } from "react-native-elements";
 
 function ShoppingListScreen({ shoppingList, navigation }) {
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", alignItems: 'center' }}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", flexDirection: 'column' }}>
+            <View style={{ display: 'flex', flexDirection: 'column' , justifyContent: 'flex-start' }}>
                 <Text style={{
                     fontSize: 18,
                     color: 'gray',
