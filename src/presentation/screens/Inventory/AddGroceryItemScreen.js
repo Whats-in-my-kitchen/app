@@ -27,11 +27,8 @@ function AddGroceryItemScreen({ navigation, addGroceryToInventoryList }) {
     <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
       <View style={{ alignItems: 'center', height: 256 }}>
         <View style={inventoryScreenStyles.titleLineStyle}>
-
         </View>
-
         <View style={{ width: '100%', alignItems: 'center', marginTop: 16 }}>
-
           <Controller
             control={control}
             rules={{
