@@ -21,7 +21,6 @@ function ShoppingListScreen({ shoppingList, navigation }) {
                         <TouchableOpacity key={i}
                             onPress={() => navigation.navigate('Grocery Items', { item: item })}>
                             <ListItem key={i}>
-                                {console.log('💀' + item)}
                                 <Avatar
                                     square
                                     overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
