@@ -15,10 +15,6 @@ function ShoppingListScreen({ shoppingList, navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", flexDirection: 'column' }}>
             <View style={{ display: 'flex', flexDirection: 'column' , justifyContent: 'flex-start' }}>
-                <Text style={{
-                    fontSize: 18,
-                    color: 'gray',
-                }}>
                     {
                         shoppingList.map((item, i) => (
 
@@ -39,10 +35,10 @@ function ShoppingListScreen({ shoppingList, navigation }) {
 
                         ))
                     }
-                </Text>
+            
             </View>
 
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
                 <TouchableOpacity
                     style={shoppingListStyles.buttonStyle}
                     onPress={() => navigation.navigate('Create List')}>
