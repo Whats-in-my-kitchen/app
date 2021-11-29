@@ -2,6 +2,7 @@ import {
   ADD_GROCERY_TO_SHOPPING_LIST,
   REMOVE_GROCERY_FROM_SHOPPING_LIST,
   ADD_SHOPPING_LIST,
+  TAP_GROCERY_ITEM,
 } from "../action/types";
 
 const initialState = {
@@ -35,6 +36,15 @@ export default function (state = initialState, action) {
       return {
         ...state,
         shoppingList: [payload, ...state.shoppingList],
+      }
+    case TAP_GROCERY_ITEM:
+      return {
+        ...state,
+        // shoppingList: 
+        // state.shoppingList.map((shop)=> shop.id === payload.id ? shop.groceryItem.map((items)=> items.id === payload.))
+        // // posts: state.posts.map((post) =>
+        //   post._id === payload.id ? { ...post, likes: payload.likes } : post
+        // ),
       }
     case ADD_GROCERY_TO_SHOPPING_LIST:
       return {

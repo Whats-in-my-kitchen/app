@@ -12,7 +12,6 @@ function ItemsShoppingList({ route }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", flexDirection: 'column' }}>
             <View>
-
                 {
                     item.groceryItem ?
                         <View>
@@ -21,7 +20,6 @@ function ItemsShoppingList({ route }) {
                                     <Avatar
                                         square
                                         overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
-                                        onPress={() => console.log("pressed")}
                                         title={items.name[0]} />
                                     <ListItem.Content>
                                         <ListItem.Title>{items.name}</ListItem.Title>
@@ -29,6 +27,7 @@ function ItemsShoppingList({ route }) {
                                     </ListItem.Content>
                                     <ListItem.CheckBox
                                         checked={items.status}
+                                        onPress={() => console.log("pressed")}
                                     />
                                 </ListItem>
                             ))}
