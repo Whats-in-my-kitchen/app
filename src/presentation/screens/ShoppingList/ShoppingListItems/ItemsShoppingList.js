@@ -23,7 +23,9 @@ function ItemsShoppingList({ route }) {
                     <ListItem.Title>{items.name}</ListItem.Title>
                     <ListItem.Subtitle>{items.count}</ListItem.Subtitle>
                     </ListItem.Content>
-                    <ListItem.CheckBox/>
+                    <ListItem.CheckBox
+                    checked={items.status}
+                    />
                 </ListItem>
                     ))
                     }
