@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Text, View, KeyboardAvoidingView } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, View } from 'react-native';
-import inventoryScreenStyles from "./InventoryScreenStyles";
-import { kcWhite } from '../../constants/AppColors';
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import shoppingListStyles from "./ShoppingListStyles";
 import { useForm, Controller } from "react-hook-form";
+import { kcErrorColor, kcWhite } from '../../constants/AppColors';
+import { createShoppingList } from "../../../application/redux/action/shoppingList";
 import { connect } from "react-redux";
-import KTInput from "../../components/Input/KTInput";
 import SizedBox from "../../components/SizedBox/SizedBox";
-import { addGroceryToInventoryList } from "../../../application/redux/action/inventoryList";
+import { KTCaption } from "../../components/Text/KTText";
+import KTInput from "../../components/Input/KTInput";
+import { addGroceryToShoppingList } from "../../../application/redux/action/shoppingList";
 
-function AddGroceryItemScreen({ navigation, addGroceryToInventoryList }) {
+function AddGroceryItem({ navigation, addGroceryToShoppingList }) {
   const {
     control,
     handleSubmit,
@@ -19,14 +21,14 @@ function AddGroceryItemScreen({ navigation, addGroceryToInventoryList }) {
   } = useForm();
   function submitActions(data) {
     addGroceryToInventoryList(data);
-    navigation.navigate('Inventory')
+    navigation.navigate('Shopping List')
   }
   const onSubmit = (data) => submitActions(data);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
       <View style={{ alignItems: 'center', height: 256 }}>
-        <View style={inventoryScreenStyles.titleLineStyle}>
+        <View style={shoppingListStyles.titleLineStyle}>
         </View>
         <View style={{ width: '100%', alignItems: 'center', marginTop: 16 }}>
           <Controller
@@ -75,21 +77,22 @@ function AddGroceryItemScreen({ navigation, addGroceryToInventoryList }) {
         </View>
 
         <TouchableOpacity
-          style={inventoryScreenStyles.inventoryButtonStyle}
+          style={shoppingListStyles.buttonStyle}
           onPress={handleSubmit(onSubmit)}
+
         >
-          <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
+          <Text style={shoppingListStyles.buttonText}>Add item</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 }
 
-AddGroceryItemScreen.propTypes = {
+AddGroceryItem.propTypes = {
   navigation: PropTypes.object,
 };
 const mapStateToProps = (state) => ({
   shoppingList: state.shoppingList.shoppingList,
 });
 
-export default connect(mapStateToProps, { addGroceryToInventoryList })(AddGroceryItemScreen);
+export default connect(mapStateToProps, { addGroceryToShoppingList })(AddGroceryItem);

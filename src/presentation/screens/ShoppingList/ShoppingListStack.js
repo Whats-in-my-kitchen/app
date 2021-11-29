@@ -5,6 +5,7 @@ import ShoppingListScreen from "./ShoppingListScreen";
 import CreateShoppingListScreen from "./CreateShoppingListScreen";
 import CreateGroceryListItem from "./ShoppingListItems/CreateGroceryListItem";
 import ItemsShoppingList from "./ShoppingListItems/ItemsShoppingList";
+import AddGroceryItem from "./AddGroceryItem";
 const Stack = createStackNavigator();
 function ShoppingListStack({ navigation }) {
   return (
@@ -20,6 +21,7 @@ function ShoppingListStack({ navigation }) {
       <Stack.Screen name="Create List" component={CreateShoppingListScreen} ></Stack.Screen>
       <Stack.Screen name="CreateGroceryListItem" component={CreateGroceryListItem}></Stack.Screen>
       <Stack.Screen name="Grocery Items" component={ItemsShoppingList}></Stack.Screen>
+      <Stack.Screen name="Add Items" component={AddGroceryItem}></Stack.Screen>
     </Stack.Navigator>
   );
 }

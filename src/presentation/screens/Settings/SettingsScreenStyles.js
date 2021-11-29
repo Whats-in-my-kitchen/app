@@ -13,7 +13,7 @@ const settingsScreenStyles = StyleSheet.create({
         justifyContent:'space-between'
     },
     settingsButtonStyle:{
-        backgroundColor:'#f5304d',//color of the  button
+        backgroundColor:'#f0efef',//color of the  button
         borderRadius:8,
         height: 40,
         width: "100%",
@@ -24,12 +24,12 @@ const settingsScreenStyles = StyleSheet.create({
     settingsButtonText:{
         fontSize:20,
         fontWeight:'normal',
-        color:'white',
+        color:'black',
         textAlign:'center'
     },
 
 })
 
-export default inventoryScreenStyles;
+export default settingsScreenStyles;
 
 

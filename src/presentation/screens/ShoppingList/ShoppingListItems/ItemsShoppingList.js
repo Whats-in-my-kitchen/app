@@ -6,12 +6,17 @@ import shoppingListStyles from '../ShoppingListStyles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ListItem, Avatar, Icon, Image } from "react-native-elements";
 import { kcWhite, kcLightGrey, kcDarkGrey } from '../../../constants/AppColors';
-function ItemsShoppingList({ route }) {
+function ItemsShoppingList({ route, navigation }) {
     const { item } = route.params;
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", flexDirection: 'column' }}>
             <View>
+            <TouchableOpacity
+          style={shoppingListStyles.buttonStyle}
+          onPress={() => navigation.navigate('Add Items')}>
+          <Text style={shoppingListStyles.buttonText}>Add item</Text>
+        </TouchableOpacity>
                 {
                     item.groceryItem ?
                         <View>
