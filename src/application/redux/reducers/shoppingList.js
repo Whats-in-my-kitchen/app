@@ -22,8 +22,8 @@ const initialState = {
     },
     {
       id: 3,
-      name: "asdfjlksdf",
-      groceryItem: [{id: 1, name: "Cookies", count:1, status: true}]
+      name: "Third Shopping List",
+      groceryItem: [{ id: 1, name: "Cookies", count: 1, status: true }]
     }
   ],
 };

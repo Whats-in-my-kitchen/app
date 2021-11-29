@@ -20,22 +20,24 @@ function ShoppingListScreen({ shoppingList, navigation }) {
                     color: 'gray',
                 }}>
                     {
-                    shoppingList.map((id, i) => (
-                    <TouchableOpacity key={i}>
-                    <ListItem key={i}>
-                    <Avatar
-                    square
-                    overlayContainerStyle={{backgroundColor: kcDarkGrey}}
-                    onPress={() => navigation.navigate('Grocery Items')}
-                    title={id.name[0]} />
-                    <ListItem.Content>
-                    <ListItem.Title>{id.name}</ListItem.Title>
-                    </ListItem.Content>
-                    <ListItem.Chevron/>
-                </ListItem>
-                </TouchableOpacity>
-                
-                    ))
+                        shoppingList.map((item, i) => (
+
+                            <TouchableOpacity key={i}>
+                                <ListItem key={i}>
+                                    {console.log('💀' + item)}
+                                    <Avatar
+                                        square
+                                        overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
+                                        onPress={() => navigation.navigate('Grocery Items')}
+                                        title={item ? item.name[0] : 'U'} />
+                                    <ListItem.Content>
+                                        <ListItem.Title>{item.name}</ListItem.Title>
+                                    </ListItem.Content>
+                                    <ListItem.Chevron />
+                                </ListItem>
+                            </TouchableOpacity>
+
+                        ))
                     }
                 </Text>
             </View>
