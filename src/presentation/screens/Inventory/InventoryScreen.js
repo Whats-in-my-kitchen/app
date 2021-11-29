@@ -11,7 +11,8 @@ import AddGroceryItemScreen from './AddGroceryItemScreen';
 function InventoryScreen(props) {
     return (
         <SafeAreaView style={{flex:1,backgroundColor:kcWhite, height:"100%", alignItems:'center'}}>
-            
+             
+
             <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
                 <TouchableOpacity
                 style={inventoryScreenStyles.inventoryButtonStyle}

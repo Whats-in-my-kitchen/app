@@ -5,9 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 function ItemsShoppingList(props) {
     return (
         <SafeAreaView>
+            <View>
             <Text>
                 List of shopping List Items
             </Text>
+            </View>
         </SafeAreaView>
     )
 }

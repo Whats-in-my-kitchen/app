@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import shoppingListStyles from './ShoppingListStyles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { kcWhite } from '../../constants/AppColors';
+import { kcWhite, kcLightGrey, kcDarkGrey } from '../../constants/AppColors';
 import { createStackNavigator, createAppContainer } from '@react-navigation/stack';
 import CreateShoppingListScreen from './CreateShoppingListScreen';
 import { connect } from 'react-redux';
@@ -21,16 +21,20 @@ function ShoppingListScreen({ shoppingList, navigation }) {
                 }}>
                     {
                     shoppingList.map((id, i) => (
+                    <TouchableOpacity key={i}>
                     <ListItem key={i}>
                     <Avatar
                     square
-                    onPress={() => console.log("avatar pressed")}
+                    overlayContainerStyle={{backgroundColor: kcDarkGrey}}
+                    onPress={() => navigation.navigate('Grocery Items')}
                     title={id.name[0]} />
                     <ListItem.Content>
                     <ListItem.Title>{id.name}</ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron/>
                 </ListItem>
+                </TouchableOpacity>
+                
                     ))
                     }
                 </Text>

@@ -19,7 +19,7 @@ function ShoppingListStack({ navigation }) {
       <Stack.Screen name="Shopping List" component={ShoppingListScreen}></Stack.Screen>
       <Stack.Screen name="Create List" component={CreateShoppingListScreen} ></Stack.Screen>
       <Stack.Screen name="CreateGroceryListItem" component={CreateGroceryListItem}></Stack.Screen>
-      <Stack.Screen name="ItemsShoppingList" component={ItemsShoppingList}></Stack.Screen>
+      <Stack.Screen name="Grocery Items" component={ItemsShoppingList}></Stack.Screen>
     </Stack.Navigator>
   );
 }
