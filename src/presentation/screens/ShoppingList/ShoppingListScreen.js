@@ -14,29 +14,29 @@ import { ListItem, Avatar, Icon, Image } from "react-native-elements";
 function ShoppingListScreen({ shoppingList, navigation }) {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%", flexDirection: 'column' }}>
-            <View style={{ display: 'flex', flexDirection: 'column' , justifyContent: 'flex-start' }}>
-                    {
-                        shoppingList.map((item, i) => (
+            <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                {
+                    shoppingList.map((item, i) => (
 
-                            <TouchableOpacity key={i}
-                            onPress={() => navigation.navigate('Grocery Items',item)}>
-                                <ListItem key={i}>
-                                    {console.log('💀' + item)}
-                                    <Avatar
-                                        square
-                                        overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
-                                        //onPress={() => navigation.navigate('Grocery Items',item)}
-                                        title={item ? item.name[0] : 'U'} />
-                                    <ListItem.Content>
-                                        <ListItem.Title>{item.name}</ListItem.Title>
-                                    </ListItem.Content>
-                                    <ListItem.Chevron />
-                                </ListItem>
-                            </TouchableOpacity>
+                        <TouchableOpacity key={i}
+                            onPress={() => navigation.navigate('Grocery Items', { item: item })}>
+                            <ListItem key={i}>
+                                {console.log('💀' + item)}
+                                <Avatar
+                                    square
+                                    overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
+                                    //onPress={() => navigation.navigate('Grocery Items',item)}
+                                    title={item ? item.name[0] : 'U'} />
+                                <ListItem.Content>
+                                    <ListItem.Title>{item.name}</ListItem.Title>
+                                </ListItem.Content>
+                                <ListItem.Chevron />
+                            </ListItem>
+                        </TouchableOpacity>
 
-                        ))
-                    }
-            
+                    ))
+                }
+
             </View>
 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
