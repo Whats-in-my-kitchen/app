@@ -21,10 +21,25 @@ const settingsScreenStyles = StyleSheet.create({
         justifyContent:'center',
         padding: 30,
     },
+    logoutButtonStyle:{
+        backgroundColor:'#f5304d',//color of the  button
+        borderRadius:8,
+        height: 40,
+        width: "100%",
+        alignSelf:'stretch',
+        justifyContent:'center',
+        padding: 30,
+    },
     settingsButtonText:{
         fontSize:20,
         fontWeight:'normal',
         color:'black',
+        textAlign:'center'
+    },
+    logoutButtonText:{
+        fontSize:20,
+        fontWeight:'normal',
+        color:'white',
         textAlign:'center'
     },
 

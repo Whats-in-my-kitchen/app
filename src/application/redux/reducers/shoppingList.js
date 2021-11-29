@@ -18,13 +18,14 @@ const initialState = {
     },
     {
       id: 2,
-      name: "Party at ScoobyDoobyDo",
-      groceryItem: [{ id: 1, name: "Beer", count: 12, status: false }, { id: 1, name: "Chips", count: 23, status: true }],
+      name: "Party list",
+      groceryItem: [{ id: 1, name: "Beer", count: 12, status: false }, { id: 2, name: "Chips", count: 23, status: true }, { id: 3, name: "Cookies", count: 24, status: true }],
     },
     {
       id: 3,
-      name: "Third Shopping List",
-      groceryItem: [{ id: 1, name: "Cookies", count: 1, status: true }]
+      name: "Home depot",
+      groceryItem: [{ id: 1, name: "Lights", count: 3, status: false },{ id: 2, name: "Nails", count: 50, status: false },{ id: 3, name: "Shovel", count: 1, status: true }
+      ,{ id: 4, name: "Ladder", count: 1, status: false },{ id: 5, name: "Paint", count: 2, status: true },]
     }
   ],
 };

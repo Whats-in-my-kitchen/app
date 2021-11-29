@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { kcWhite, kcDarkGrey } from '../../constants/AppColors';
+import SizedBox from '../../components/SizedBox/SizedBox'
 import {KTHeadingOne, KTHeadingThree, KTCaption, KTHeadingTwo} from '../../components/Text/KTText.js'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ListItem, Avatar, Icon, Image } from "react-native-elements";
@@ -14,6 +15,7 @@ function SettingsScreen({ navigation }) {
              text="General"
              color='black'
              font='bold'/>
+             <SizedBox large/>
              <TouchableOpacity style={settingsScreenStyles.settingsButtonStyle}
                     onPress={() => console.log('Account Settings')}>
                  <Text style={settingsScreenStyles.settingsButtonText}>
@@ -21,6 +23,17 @@ function SettingsScreen({ navigation }) {
                  </Text>
                  <ListItem.Chevron/>
              </TouchableOpacity>
+             <SizedBox large/>
+             <TouchableOpacity style={settingsScreenStyles.logoutButtonStyle}
+                    onPress={() => console.log('Log out')}>
+                 <Text style={settingsScreenStyles.logoutButtonText}>
+                Logout
+                 </Text>
+                 <ListItem.Chevron/>
+             </TouchableOpacity>
+             
+
+             
         </SafeAreaView>
 
     )
