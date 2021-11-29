@@ -18,13 +18,14 @@ function ShoppingListScreen({ shoppingList, navigation }) {
                     {
                         shoppingList.map((item, i) => (
 
-                            <TouchableOpacity key={i}>
+                            <TouchableOpacity key={i}
+                            onPress={() => navigation.navigate('Grocery Items',item)}>
                                 <ListItem key={i}>
                                     {console.log('💀' + item)}
                                     <Avatar
                                         square
                                         overlayContainerStyle={{ backgroundColor: kcDarkGrey }}
-                                        onPress={() => navigation.navigate('Grocery Items')}
+                                        //onPress={() => navigation.navigate('Grocery Items',item)}
                                         title={item ? item.name[0] : 'U'} />
                                     <ListItem.Content>
                                         <ListItem.Title>{item.name}</ListItem.Title>
