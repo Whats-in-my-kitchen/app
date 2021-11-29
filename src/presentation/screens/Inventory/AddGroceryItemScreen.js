@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, View, KeyboardAvoidingView } from 'react-native';
+import { Text, View } from 'react-native';
 import inventoryScreenStyles from "./InventoryScreenStyles";
 import { kcWhite } from '../../constants/AppColors';
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import { useForm, Controller } from "react-hook-form";
+import { connect } from "react-redux";
+import KTInput from "../../components/Input/KTInput";
+import SizedBox from "../../components/SizedBox/SizedBox";
+import { addGroceryToInventoryList } from "../../../application/redux/action/inventoryList";
 
+function AddGroceryItemScreen({ navigation, addGroceryToInventoryList }) {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  function submitActions(data) {
+    addGroceryToInventoryList(data);
+    navigation.navigate('Inventory')
+  }
+  const onSubmit = (data) => submitActions(data);
 
-function AddGroceryItemScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
       <View style={{ alignItems: 'center', height: 256 }}>
@@ -16,15 +31,57 @@ function AddGroceryItemScreen({ navigation }) {
         </View>
 
         <View style={{ width: '100%', alignItems: 'center', marginTop: 16 }}>
-          <TextInput style={{ width: '80%', height: 50, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
-            placeholder='Item Name' />
-          <TextInput style={{ width: '80%', height: 50, margin: 12, backgroundColor: '#e5e5e5', borderRadius: 8, paddingLeft: 15 }}
-            placeholder='Expected Item Count' />
+
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <KTInput
+                placeholder={"Item Name"}
+                onBlur={onBlur}
+                onChange={onChange}
+                value={value}
+              />
+            )}
+            name="name"
+            defaultValue=""
+          />
+
+          <SizedBox small />
+          {errors.name && (
+            <KTCaption text="Item name is required" color={kcErrorColor}></KTCaption>
+          )}
+
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <KTInput
+                placeholder={"Item Count"}
+                onBlur={onBlur}
+                onChange={onChange}
+                value={value}
+              />
+            )}
+            name="count"
+            defaultValue=""
+          />
+
+          <SizedBox small />
+          {errors.count && (
+            <KTCaption text="Item count is required" color={kcErrorColor}></KTCaption>
+          )}
         </View>
 
         <TouchableOpacity
           style={inventoryScreenStyles.inventoryButtonStyle}
-          onPress={() => navigation.navigate('Add Grocery Items')}>
+          onPress={handleSubmit(onSubmit)}
+
+        >
           <Text style={inventoryScreenStyles.inventoryButtonText}>Add item</Text>
         </TouchableOpacity>
       </View>
@@ -35,5 +92,8 @@ function AddGroceryItemScreen({ navigation }) {
 AddGroceryItemScreen.propTypes = {
   navigation: PropTypes.object,
 };
+const mapStateToProps = (state) => ({
+  shoppingList: state.shoppingList.shoppingList,
+});
 
-export default AddGroceryItemScreen;
+export default connect(mapStateToProps, { addGroceryToInventoryList })(AddGroceryItemScreen);

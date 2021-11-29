@@ -4,13 +4,11 @@ import {
 } from "../action/types";
 
 const initialState = {
-
   groceryItem: [
-    { id: 1, name: "Egg", count: 2, status: false },
-    { id: 2, name: "Milk", count: 5, status: true },
-    { id: 3, name: "Spinach", count: 2, status: false },
+    { id: 1, name: "Egg", count: 2, },
+    { id: 2, name: "Milk", count: 5, },
+    { id: 3, name: "Spinach", count: 2, },
   ],
-
 };
 
 export default function (state = initialState, action) {
@@ -19,7 +17,7 @@ export default function (state = initialState, action) {
     case ADD_GROCERY_TO_INVENTORY_LIST:
       return {
         ...state,
-        groceryList: [payload, ...state.groceryList],
+        groceryItem: [payload, ...state.groceryItem],
       };
     case REMOVE_GROCERY_FROM_INVENTORY_LIST:
       return {
