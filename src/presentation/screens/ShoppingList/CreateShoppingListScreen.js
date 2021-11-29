@@ -21,11 +21,13 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(shoppingList)
-    createShoppingList(data)
-    navigation.navigate('Shopping List')
-  };
+
+  function submitActions(data) {
+    console.log(data);
+    createShoppingList(data);
+    navigation.navigate('Shopping List');
+  }
+  const onSubmit = (data) => submitActions(data);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: kcWhite, height: "100%" }}>
@@ -44,7 +46,7 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
                 value={value}
               />
             )}
-            name="listName"
+            name="name"
             defaultValue=""
           />
           <SizedBox small />
@@ -64,7 +66,7 @@ function CreateShoppingListScreen({ navigation, shoppingList, createShoppingList
                 value={value}
               />
             )}
-            name="listDescription"
+            name="description"
             defaultValue=""
           />
         </View>
